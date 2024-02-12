@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='src/consulta/style.css')}}">
+</head>
+
+<body>
+    <div class="screenContainer">
+        <div class="h-100 w-100 d-flex align-items-center justify-content-between columnGap position-relative">
+
+            <div class="d-flex align-items-center justify-content-center" style="gap: 0.5rem;">
+
+                <input type="date" id="dateSelect" value="" style="min-width: 180px;" />
+                <select class="form-select" id="hourSelect" aria-label="Default select example">
+                    <option selected value="-1">Todas as horas</option>
+
+                </select>
+                <select class="form-select" id="receitasSelect" aria-label="Default select example">
+                    <option selected value="0">Reprovados</option>
+                    <option selected value="1">Aprovados</option>
+                </select>
+            </div>
+
+
+            <div class="d-flex align-items-center justify-content-center gap1rem">
+                <button class="btn btn-primary" id="searchButton">Buscar</button>
+            </div>
+        </div>
+        <div id="tableAprovados"></div>
+    </div>
+    <script src="{{url_for('static', filename='src/consulta/index.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='src/producao/style.css')}}" />
+</head>
+
+<body>
+    <div class="d-flex flex-column">
+        <div class="producao-container flex-fill">
+            <div class="img-producao">
+                <img src="static/imgs/producao/1.jpeg" id="img-producao">
+            </div>
+            <div class="producao-info default-shadow">
+                <button class="btn btn-outline-secondary status-rastreabilidade w-100" disabled>
+                    Rastreabilidade
+                </button>
+                <div class="w-100 flex-fill">
+                    <div class="card w-100">
+                        <div class="card-header fs-5 text-center">Último Código Lido</div>
+                        <div class="card-body p-0 d-grid grid-2" style="background: #22222230; gap: 1px;">
+                            <div class="fs-5 w-100 bg-white px-1">Cód. Stellantis: </div>
+                            <div class="fs-5 w-100 bg-white px-1" id="codAtual">-</div>
+                            <div class="fs-5 w-100 bg-white px-1">Cód. Cliente: </div>
+                            <div class="fs-5 w-100 bg-white px-1" id="cliente">-</div>
+                            <div class="fs-5 w-100 bg-white px-1">Cód. Único: </div>
+                            <div class="fs-5 w-100 bg-white px-1" id="sequencial">-</div>
+                            <div class="fs-5 w-100 bg-white px-1">Juliano: </div>
+                            <div class="fs-5 w-100 bg-white px-1" id="juliano">-</div>
+                            <div class="fs-5 w-100 bg-white px-1">Ano: </div>
+                            <div class="fs-5 w-100 bg-white px-1" id="ano">-</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn_instrucao instrucao w-100">Instrução</button>
+
+                <div class="estatisticas">
+                    <button class="aprovado btn btn-success" disabled>0</button>
+                    <button class="reprovado btn btn-danger" disabled>0</button>
+                    <button class="zera_estatisticas btn btn-secondary"><i class="fa fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="status-container d-flex flex-column justify-content-center" style="height: 18vh;">
+        <div class="msg d-flex align-items-center justify-content-center default-shadow" style="height: 7vh;"></div>
+        <div class="passo d-flex align-items-center justify-content-center default-shadow" style="height: 7vh;"></div>
+    </div>
+
+
+    <div class="modal" id="inst" tabindex="-1" role="dialog" style="width: 100%;place-items: center;">
+        <div class="modal-dialog" style="width: 90vw; max-width: 90vw;">
+            <div class="modal-content" style="width: 90vw; height: 100vh">
+                <div class="modal-header">
+                    <h5 class="modal-title">Instruções de trabalho</h5>
+                    <button type="button" class="btn btn-danger" id="close_inst" data-dismiss="modal"
+                        aria-label="Close">
+                        <svg class="inst_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="static/1.pdf" style="width: 100%; height: 100%;" id="prod-pdf"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='src/producao/index.js')}}"></script>
+</body>
+
+</html>

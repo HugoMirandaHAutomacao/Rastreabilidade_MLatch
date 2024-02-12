@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Hassegawa Automação</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="{{url_for('static', filename='libs/bootstrap.css')}}" />
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="{{url_for('static', filename='src/index/style.css')}}" />
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="{{url_for('static', filename='libs/jquery.mCustomScrollbar.min.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename='libs/toastr.css')}}" />
+  <!-- Loading Favicon -->
+  <link rel="shortcut icon" href="{{url_for('static', filename='imgs/hsystems.png')}}" type="image/x-icon" />
+  <link rel="stylesheet" href="{{url_for('static', filename='libs/sweetalert.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename='libs/grid.css')}}" />
+
+  <script src="{{url_for('static', filename='libs/jquery.js')}}"></script>
+
+  <!-- Font Awesome JS -->
+  <script defer src="{{url_for('static', filename='libs/solid.js')}}"></script>
+  <script defer src="{{url_for('static', filename='libs/fontawesome.js')}}"></script>
+</head>
+
+<body oncontextmenu="return false;">
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div id="dismiss">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+
+      <div class="sidebar-header d-flex flex-column justify-content-center align-items-center">
+        <img src="{{url_for('static', filename='imgs/hsystems.png')}}" class="topLeftImg"
+          style="height: 75px; width: 75px" />
+      </div>
+
+      <ul class="list-unstyled components">
+        <li class="active side-menu-item" name="Início" page="/home">
+          <a href="#">Início</a>
+        </li>
+        <li class="side-menu-item" name="Produção" page="/producao" local_only>
+          <a href="#">Produção</a>
+        </li>
+        <li class="side-menu-item" hasChildren="True">
+          <a data-bs-toggle="collapse" href="#engeneeringSubMenu" aria-expanded="false"
+            aria-controls="engeneeringSubMenu" access="Engenharia">
+            Engenharia
+          </a>
+          <ul class="collapse list-unstyled" id="engeneeringSubMenu">
+            <li class="side-submenu-item" page="/engeneering/register_clp" name="Cadastro de CLP">
+              <a href="#">Cadastro de CLP</a>
+            </li>
+            <li class="side-submenu-item" page="/engeneering/register_parameters" name="Cadastro de Parâmetros">
+              <a href="#">Cadastro de Parâmetros</a>
+            </li>
+            <li class="side-submenu-item" page="/engeneering/desvio_rotas" name="Cadastro de Desvio de rotas">
+              <a href="#"> Cadastro de Desvio de Rota </a>
+            </li>
+            <li class="side-submenu-item cadastro_ips" page="/engeneering/register_ips" name="Cadastro de IPs da linha">
+              <a href="#"> Cadastro de IPs </a>
+            </li>
+            <li class="side-submenu-item cadastro_ips" page="/engeneering/register_parafusadeira"
+              name="Cadastro de parafusadeiras do posto">
+              <a href="#"> Cadastro de Parafusadeiras </a>
+            </li>
+            <li class="side-submenu-item" page="/engeneering/cadastroReceitas" name="Cadastro de Receitas">
+              <a href="#"> Cadastro de Receitas </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="side-menu-item" name="Configs" access="Manutenção" page="/config">
+          <a href="#">Configurações</a>
+        </li>
+        <li class="side-menu-item" name="Cadastro de Acesso" access="Administrador" page="/engeneering/register_users">
+          <a href="#">Acesso</a>
+        </li>
+        <li class="side-menu-item" name="Consulta" page="/consulta" access="Administrador" local_only>
+          <a href="#">Consulta</a>
+        </li>
+      </ul>
+
+      <ul class="list-unstyled CTAs">
+        <li>
+          <a href="#" class="sobre download">Sobre</a>
+        </li>
+        <li local_only>
+          <a href="#" class="logout">Logout</a>
+        </li>
+        <li>
+          <a href="#" class="reload download">Recarregar Página</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+      <div id="mainHeader">
+        <img src="{{url_for('static', filename='imgs/hassegawa.png')}}" class="topLeftImg" />
+        <img src="{{url_for('static', filename='imgs/magna.png')}}" class="topRightImg" />
+      </div>
+
+      <nav class="navbar">
+        <div class="navbar_container">
+          <div class="toolBarSides">
+            <button type="button" id="sidebarCollapse" class="btn download">
+              <i class="fas fa-align-justify"></i>
+            </button>
+            <div class="navText" id="modo"></div>
+          </div>
+          <div class="toolBarSides">
+            <div class="navText" id="pageName">Home</div>
+          </div>
+          <div class="toolBarSides">
+            <div class="navText" id="workerName"></div>
+            <div class="navText" id="chapa"></div>
+          </div>
+        </div>
+      </nav>
+      <div id="mainContent" style="min-height: 100%"></div>
+      <div id="footer">
+        <h1 id="footerText"></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="{{url_for('static', filename='libs/bootstrap.js')}}"></script>
+  <!-- jQuery Custom Scroller CDN -->
+  <script src="{{url_for('static', filename='libs/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+  <script src="{{url_for('static', filename='libs/progressbar.min.js')}}"></script>
+  <script src="{{url_for('static', filename='libs/kioskboard-aio-1.4.0.min.js')}}"></script>
+  <script src="{{url_for('static', filename='libs/pdf.js')}}"></script>
+  <script src="{{url_for('static', filename='libs/color.js')}}"></script>
+  <script src="{{url_for('static', filename='libs/toastr.js')}}"></script>
+  <script src="{{url_for('static', filename='libs/grid.js')}}"></script>
+
+  <script src="{{url_for('static', filename='libs/sweetalert.js')}}"></script>
+
+  <script src="{{ url_for('static', filename='libs/am_xy.js')}}" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='libs/am_index.js')}}" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='libs/am_Animated.js')}}" type="text/javascript"></script>
+
+  <script src="{{url_for('static', filename='src/index/recipes.js')}}"></script>
+  <script src="{{url_for('static', filename='src/index/index.js')}}"></script>
+  <script type="text/javascript">
+    let triggeredMsg = false;
+    $(document).ready(function () {
+      changePage("/home");
+      $("#pageName").text("Home");
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal",
+      });
+      changeFootText("");
+      $("#dismiss, .overlay").on("click", function () {
+        $("#sidebar").removeClass("active");
+        $(".overlay").removeClass("active");
+      });
+
+      $("#sidebarCollapse").on("click", function () {
+        $("#sidebar").addClass("active");
+        $(".overlay").addClass("active");
+        $(".collapse.in").toggleClass("in");
+      });
+    });
+
+    $(".sobre").on("click", () => {
+      changePage("/sobre");
+    });
+
+    function logout() {
+      Swal.fire({
+        title: "Deslogar?",
+        showDenyButton: true,
+        confirmButtonText: "Deslogar",
+        denyButtonText: `Ficar`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            url: "/logout"
+          })
+
+          Swal.fire("Deslogado!", "", "success").then(() => {
+            location.reload()
+          });
+        }
+      });
+    }
+    $(".logout").on("click", () => {
+      if (document.URL.split("//")[1].split(":")[0] != "127.0.0.1") {
+        location.reload()
+      } else {
+        if (MainProperties["user"].length == 0) {
+          Swal.fire("Você não está logado!", "", "info");
+        } else {
+          logout();
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

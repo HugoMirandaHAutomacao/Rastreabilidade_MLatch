@@ -1,0 +1,52 @@
+.form-container {
+  width: 100%;
+  height: 92vh;
+  display: grid;
+  place-items: center;
+
+  padding: 1rem;
+
+  gap: 1rem;
+
+  overflow-y: scroll;
+
+  scrollbar-width: None;
+}
+
+#form-config {
+  width: 70%;
+  border: 1px solid #22222230;
+  border-radius: 0.5rem;
+
+  padding: 0.5rem 1rem;
+
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+}
+
+.form-check {
+  width: 80%;
+}
+
+.form-control {
+  width: 100% !important;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  place-items: center;
+
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{url_for('static', filename='src/engeneering/register_ips/style.css')}}" />
+</head>
+
+<body>
+  <div class="form-container">
+    <form id="form-ips">
+      <h1 class="title">Cadastro de IPS da linha</h1>
+      <select class="form-select form-select-lg mb-3" id="ips" aria-label="Default select example">
+        <option selected></option>
+      </select>
+      <div class="form-group">
+        <div class="mb-3">
+          <label for="codigo" class="form-label">Posto</label>
+          <input type="text" class="form-control" id="posto" placeholder="..." />
+        </div>
+        <div class="mb-3">
+          <label for="ip" class="form-label">Ip</label>
+          <input type="text" class="form-control" id="ip" placeholder="0.0.0.0" />
+        </div>
+      </div>
+      <div class="grid-3">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <div id="update_ip" class="btn btn-warning">Atualizar</div>
+        <div id="delete_ip" class="btn btn-danger">Deletar</div>
+      </div>
+    </form>
+  </div>
+
+  <script src="{{url_for('static', filename='src/engeneering/register_ips/main.js')}}"></script>
+</body>
+
+</html>

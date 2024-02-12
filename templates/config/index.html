@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{url_for('static', filename='src/config/style.css')}}" />
+</head>
+
+<body>
+  <div class="form-container">
+    <form id="form-config">
+      <h1 class="title">Configurações</h1>
+      <div class="form-group">
+        <div class="card">
+          <h1 class="card-title text-center">
+            Configurações de Rede
+          </h1>
+
+          <div class="grid-2">
+            <div class="mb-3">
+              <label for="ip" class="form-label">Endereço IP</label>
+              <input type="text" class="form-control js-kioskboard-input" id="ip" placeholder="0.0.0.0" />
+            </div>
+            <div class="mb-3">
+              <label for="netmask" class="form-label">Netmask</label>
+              <input type="text" class="form-control js-kioskboard-input" id="netmask" placeholder="0.0.0.0" />
+            </div>
+            <div class="mb-3">
+              <label for="gateway" class="form-label">Gateway</label>
+              <input type="text" class="form-control js-kioskboard-input" id="gateway" placeholder="0.0.0.0" />
+            </div>
+            <div class="mb-3" id="ip_consulta_container">
+              <label for="ip_consulta" class="form-label">IP Posto Anterior</label>
+              <input type="text" class="form-control js-kioskboard-input" id="ip_consulta" placeholder="0.0.0.0" />
+            </div>
+            <div class="mb-3">
+              <label for="ip_ultimo_posto" class="form-label">IP Último Posto</label>
+              <input type="text" class="form-control js-kioskboard-input" id="ip_ultimo_posto" placeholder="0.0.0.0" />
+            </div>
+            <div class="mb-3" id="ip_impressora_container">
+              <label for="ip_impressora" class="form-label">IP Impressora</label>
+              <input type="text" class="form-control js-kioskboard-input" id="ip_impressora" placeholder="0.0.0.0" />
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1 class="card-title text-center">
+            Configurações Rastreabilidade
+          </h1>
+          <div class="grid-2">
+            <div class="mb-3">
+              <label for="cod_unico" class="form-label">Código Magna</label>
+              <input type="text" class="form-control js-kioskboard-input" id="cod_unico" placeholder="-" />
+            </div>
+            <div class="mb-3">
+              <label for="cod_unico" class="form-label">Tipo de Etiqueta</label>
+              <select class="form-select mb-3" id="tipo_etiqueta">
+                <option selected value="">Tipo de etiqueta</option>
+                <option value="fiat">Fiat</option>
+                <option value="GM">GM</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="nome_totem" class="form-label">Nome do Totem</label>
+              <input type="text" class="form-control js-kioskboard-input" id="nome_totem" placeholder="..." />
+            </div>
+            <div></div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="ftp">
+              <label class="form-check-label" for="ftp">
+                FTP
+              </label>
+            </div>
+            <div class="mb-3" id="qntd_ftp_container">
+              <label for="qntd_ftp" class="form-label">Quantidade de arquivos</label>
+              <input type="text" class="form-control js-kioskboard-input" id="qntd_ftp" placeholder="0" />
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="leitura_plc">
+              <label class="form-check-label" for="leitura_plc">
+                Leitura PLC
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="ultimo_posto">
+              <label class="form-check-label" for="ultimo_posto">
+                Último Posto
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1 class="card-title text-center">
+            Configurações Produção
+          </h1>
+          <div class="grid-2">
+            <div class="mb-3">
+              <label for="producao-img" class="form-label">Imagem</label>
+              <input class="form-control" type="file" accept="image/*" id="producao-img">
+            </div>
+            <div class="mb-3">
+              <label for="producao-pdf" class="form-label">PDF</label>
+              <input class="form-control" type="file" accept=".pdf" id="producao-pdf">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <h1 class="card-title text-center">
+            Configurações de Periféricos
+          </h1>
+          <div class="grid-2">
+            <div>
+              <h3>Leitor de mão</h3>
+              <div class="mb-3">
+                <label for="scanner_com_port" class="form-label">Porta COM</label>
+                <input type="text" class="form-control js-kioskboard-input" id="scanner_com_port" placeholder="-" />
+              </div>
+              <div class="mb-3">
+                <label for="scanner_read" class="form-label">Valor de Leitura</label>
+                <input type="text" class="form-control js-kioskboard-input" id="scanner_read" disabled
+                  placeholder="-" />
+              </div>
+            </div>
+            <div>
+              <h3>Leitor RFID</h3>
+              <div class="mb-3">
+                <label for="rfid_com_port" class="form-label">Porta COM</label>
+                <input type="text" class="form-control js-kioskboard-input" id="rfid_com_port" placeholder="-" />
+              </div>
+              <div class="mb-3">
+                <label for="rfid_read" class="form-label">Valor de Leitura</label>
+                <input type="text" class="form-control js-kioskboard-input" id="rfid_read" disabled placeholder="-" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="btn-group" role="group">
+        <input type="radio" class="btn-check" name="btnradio" id="etiqueta" autocomplete="off">
+        <label class="btn btn-outline-primary" for="etiqueta">Etiqueta</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="subEtiqueta" autocomplete="off">
+        <label class="btn btn-outline-primary" for="subEtiqueta">Sub. Etiqueta</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="consulta" autocomplete="off">
+        <label class="btn btn-outline-primary" for="consulta">Consulta</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="consultaCodigo" autocomplete="off">
+        <label class="btn btn-outline-primary" for="consultaCodigo">Cons. Código</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-3">Atualizar Configurações</button>
+    </form>
+    <button class="btn btn-danger" id="delete-db">Apagar Banco de dados</button>
+  </div>
+
+  <script src="{{url_for('static', filename='src/config/main.js')}}"></script>
+</body>
+
+</html>

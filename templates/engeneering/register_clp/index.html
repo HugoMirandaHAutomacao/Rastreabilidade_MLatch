@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{url_for('static', filename='src/engeneering/register_clp/style.css')}}" />
+</head>
+
+<body>
+  <div class="form-container">
+    <form id="form-clp">
+      <h1 class="title">Cadastro de CLP</h1>
+      <div class="form-group">
+        <div class="mb-3">
+          <label for="descricao" class="form-label">Descrição</label>
+          <input type="text" class="form-control js-kioskboard-input" id="descricao" placeholder="..." />
+        </div>
+        <div class="mb-3">
+          <label for="ip" class="form-label">IP</label>
+          <input type="text" class="form-control js-kioskboard-input" id="ip" placeholder="0.0.0.0" />
+        </div>
+        <div class="mb-3">
+          <label for="rack" class="form-label">Rack</label>
+          <input type="text" class="form-control js-kioskboard-input" id="rack" placeholder="0" />
+        </div>
+        <div class="mb-3">
+          <label for="slot" class="form-label">Slot</label>
+          <input type="text" class="form-control js-kioskboard-input" id="slot" placeholder="1" />
+        </div>
+        <div class="mb-3">
+          <label for="db" class="form-label">DB</label>
+          <input type="text" class="form-control js-kioskboard-input" id="db" placeholder="1" />
+        </div>
+      </div>
+      <div class="grid-3">
+        <button type="submit" class="btn btn-warning">Atualizar</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="{{url_for('static', filename='src/engeneering/register_clp/main.js')}}"></script>
+</body>
+
+</html>

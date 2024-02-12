@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{url_for('static', filename='src/engeneering/register_parafusadeira/style.css')}}" />
+</head>
+
+<body>
+  <div class="form-container">
+    <form id="form-parafusadeira">
+      <h1 class="title">Cadastro de Parafusadeiras</h1>
+      <select class="form-select form-select-lg mb-3" id="parafusadeiras" aria-label="Default select example">
+        <option selected></option>
+      </select>
+      <div class="form-group">
+        <div class="mb-3">
+          <label for="link" class="form-label">ip</label>
+          <input type="text" class="form-control js-kioskboard-input" id="ip" placeholder="0.0.0.0" />
+        </div>
+        <div class="mb-3">
+          <label for="link" class="form-label">Link</label>
+          <input type="text" class="form-control js-kioskboard-input" id="link" placeholder="http://0.0.0.0/" />
+        </div>
+        <select class="form-select form-select-lg mb-3" id="marca" aria-label="Default select example">
+          <option selected value="">Selecione a marca</option>
+          <option selected value="Deprag">Deprag</option>
+        </select>
+        <div class="grid-2">
+          <div class="mb-3">
+            <label for="index_torque" class="form-label">Index de Torque</label>
+            <input type="text" class="form-control js-kioskboard-input" id="index_torque" placeholder="0" />
+          </div>
+          <div class="mb-3">
+            <label for="index_tempo" class="form-label">Index de tempo</label>
+            <input type="text" class="form-control js-kioskboard-input" id="index_tempo" placeholder="0" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="db_parafusadeira" class="form-label">DB parafusadeira</label>
+          <input type="text" class="form-control js-kioskboard-input" id="db_parafusadeira" placeholder="0.0" />
+        </div>
+      </div>
+      <div class="grid-3">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <div id="update_parafusadeira" class="btn btn-warning">Atualizar</div>
+        <div id="delete_parafusadeira" class="btn btn-danger">Deletar</div>
+        <div id="teste_link" class="btn btn-danger">Testar Link</div>
+      </div>
+    </form>
+  </div>
+
+  <script src="{{url_for('static', filename='src/engeneering/register_parafusadeira/main.js')}}"></script>
+</body>
+
+</html>

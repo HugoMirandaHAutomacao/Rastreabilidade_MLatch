@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{url_for('static', filename='src/engeneering/register_users/style.css')}}" />
+</head>
+
+<body>
+  <div class="form-container">
+    <form id="form-user">
+      <h1 class="title">Cadastro de Usuários</h1>
+      <select class="form-select form-select-lg mb-3" id="users">
+        <option selected></option>
+      </select>
+      <div class="form-group">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control js-kioskboard-input" id="nome" placeholder="Nome" />
+        </div>
+        <div class="mb-3">
+          <label for="chapa_input" class="form-label">Chapa</label>
+          <input type="text" class="form-control js-kioskboard-input" id="chapa_input" placeholder="Chapa" />
+        </div>
+        <div class="mb-3">
+          <label for="rfid" class="form-label">RFID</label>
+          <input type="text" class="form-control js-kioskboard-input" id="rfid" disabled placeholder="000000000" />
+        </div>
+        <div class="mb-3" id="password_container" hidden>
+          <label for="password" class="form-label" >Senha acesso remoto</label>
+          <input type="password" class="form-control js-kioskboard-input" autocomplete="off" id="password" placeholder="Senha" />
+        </div>
+        <div class="mb-3 permissions">
+          <h3>Permissões</h3>
+          <div class="btn-group" role="group">
+            <input class="btn-check" type="checkbox" id="producao" permission="Produção" />
+            <label for="producao" class="btn btn-outline-primary">Produção</label>
+
+            <input class="btn-check" type="checkbox" id="lider" permission="Líder" />
+            <label for="lider" class="btn btn-outline-primary">Líder</label>
+
+            <input class="btn-check" type="checkbox" id="engenharia" permission="Engenharia" />
+            <label for="engenharia" class="btn btn-outline-primary">Engenharia</label>
+
+            <input class="btn-check" type="checkbox" id="manutencao" permission="Manutenção" />
+            <label for="manutencao" class="btn btn-outline-primary">Manutenção</label>
+
+            <input class="btn-check" type="checkbox" id="admin" permission="Administrador" />
+            <label for="admin" class="btn btn-outline-primary">Administrador</label>
+          </div>
+        </div>
+      </div>
+      <div class="card-rfid mb-3">
+        RFID: 000000000
+      </div>
+      <div class="grid-3">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <div id="update_user" class="btn btn-warning">Atualizar</div>
+        <div id="delete_user" class="btn btn-danger">Deletar</div>
+        <div id="copy_rfid" class="btn btn-secondary">Copiar RFID</div>
+      </div>
+    </form>
+  </div>
+
+  <script src="{{url_for('static', filename='src/engeneering/register_users/main.js')}}"></script>
+</body>
+
+</html>

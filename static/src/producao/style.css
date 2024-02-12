@@ -1,0 +1,127 @@
+.producao-container {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0.5rem 1rem;
+    scrollbar-width: None;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    min-height: 70vh;
+}
+.img-producao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-producao>img {
+    max-width: 100%;
+    max-height: 50vh;
+
+    border-radius: .5rem;
+    border: 1px solid #22222230;
+}
+
+.producao-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    background: #fff;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.producao-info>button {
+    width: 80%;
+
+    font-size: 1.5rem;
+}
+
+.inst_svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    fill: #fff;
+}
+
+.grid-2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    place-items: center;
+    gap: 1rem;
+}
+
+.grid-2>button {
+    width: 100%;
+
+    font-size: 1.2rem;
+}
+
+.estatisticas {
+    display: flex;
+    grid-template-columns: 40% 40% 10%;
+
+    gap: .3rem;
+
+    width: 100%;
+}
+
+.aprovado {
+    width: 100%;
+    font-size: 2rem;
+}
+
+.reprovado {
+    width: 100%;
+    font-size: 2rem;
+}
+
+.zera_estatisticas {
+    font-size: 1.5rem;
+
+    padding: 1rem;
+
+    border-radius: 0.5rem;
+}
+
+.status-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 0.5rem 1rem;
+
+    position: absolute;
+    bottom: 1rem;
+}
+
+.passo {
+    width: 100%;
+
+    border-radius: .5rem;
+
+    background: #383636;
+    color: #fff;
+
+    font-size: 1.5rem;
+    height: 8vh;
+}
+
+.msg {
+    width: 100%;
+
+    border-radius: .5rem;
+
+    background: #fd0000;
+    color: #fff;
+
+    font-size: 1.5rem;
+
+    height: 8vh;
+}
